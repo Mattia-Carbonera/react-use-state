@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from "react";
+import "./App.css";
+
+import languages from "./db/languages";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>LearnWeb development</h1>
+      <div className="main-container">
+        {/* button section */}
+        <div className="button-container">
+          <button className={"button"}>HTML</button>
+          <button className={"button"}>CSS</button>
+          <button className={"button"}>JavaScript</button>
+          <button className={"button"}>Node.js</button>
+          <button className={"button"}>Express</button>
+          <button className={"button"}>ReactJS</button>
+        </div>
+
+        {/* card section */}
+        <div className="card-container">
+          <div className="card">
+            <h2>HTML</h2>
+            <p>
+              HTML (HyperText Markup Language) è il linguaggio standard per
+              creare pagine e applicazioni web. Struttura il contenuto web e
+              fornisce elementi di base come titoli, paragrafi e immagini.
+            </p>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
