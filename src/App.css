@@ -34,3 +34,7 @@ h1 {
 .active {
   background-color: #ffc007;
 }
+
+.d.none {
+  display: none;
+}

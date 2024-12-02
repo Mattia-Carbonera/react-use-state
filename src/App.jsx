@@ -13,11 +13,14 @@ function App() {
   // const buttonArray = document.getElementsByClassName("button");
   // console.log(buttonArray);
 
+  const [isActiveBtn, setIsActiveBtn] = useState(false);
+
+  const handlerClass = () => {
+    setIsActiveBtn(!isActiveBtn);
+  };
+
   const handleColorBtn = (index) => {
-    languages[index - 1].isActive = !languages[index - 1].isActive;
-    languages[index - 1].isActive == true
-      ? setColorBtn("active")
-      : setColorBtn("");
+    isActiveBtn == true ? setColorBtn("active") : setColorBtn("");
   };
 
   return (
@@ -27,17 +30,19 @@ function App() {
         {/* button section */}
         <div className="button-container">
           <button
-            data-value={1}
+            data={1}
+            isActive={isActiveBtn}
             className={`button  + ${colorBtn}`}
             onClick={() => {
               setTitle(languages[0].title);
               setDescription(languages[0].description);
               handleColorBtn(languages[0].id);
 
-              // console.log(event.classList);
-              {
-                // console.log(event.target.getAttribute("data-value"));
-              }
+              handlerClass();
+              console.log(isActiveBtn);
+
+              // console.log(event.target.getAttribute("data"));
+              // console.log(event.target);
             }}
           >
             HTML
