@@ -13,7 +13,7 @@ function App() {
   // const buttonArray = document.getElementsByClassName("button");
   // console.log(buttonArray);
 
-  const [isActiveBtn, setIsActiveBtn] = useState(false);
+  const [isActiveBtn, setIsActiveBtn] = useState(true);
 
   const handlerClass = () => {
     setIsActiveBtn(!isActiveBtn);
@@ -23,6 +23,13 @@ function App() {
     isActiveBtn == true ? setColorBtn("active") : setColorBtn("");
   };
 
+  let active1 = title == "HTML" ? "active" : "";
+  let active2 = title == "CSS" ? "active" : "";
+  let active3 = title == "JavaScript" ? "active" : "";
+  let active4 = title == "Node.js" ? "active" : "";
+  let active5 = title == "Express" ? "active" : "";
+  let active6 = title == "ReactJS" ? "active" : "";
+
   return (
     <>
       <h1>LearnWeb development</h1>
@@ -31,29 +38,29 @@ function App() {
         <div className="button-container">
           <button
             data={1}
-            isActive={isActiveBtn}
-            className={`button  + ${colorBtn}`}
+            isactive={isActiveBtn}
+            className={"button " + active1}
             onClick={() => {
               setTitle(languages[0].title);
               setDescription(languages[0].description);
               handleColorBtn(languages[0].id);
 
               handlerClass();
-              console.log(isActiveBtn);
 
-              // console.log(event.target.getAttribute("data"));
-              // console.log(event.target);
+              // event.target.className.add(" d-none");
+              console.log(event.target);
             }}
           >
             HTML
           </button>
           <button
             data-value={2}
-            className={`button  + ${colorBtn}`}
+            className={"button " + active2}
             onClick={() => {
               setTitle(languages[1].title);
               setDescription(languages[1].description);
               handleColorBtn(languages[1].id);
+
               {
                 console.log(event.target.getAttribute("data-value"));
               }
@@ -63,7 +70,7 @@ function App() {
           </button>
           <button
             data-value={3}
-            className={`button  + ${colorBtn}`}
+            className={"button " + active3}
             onClick={() => {
               setTitle(languages[2].title);
               setDescription(languages[2].description);
@@ -77,7 +84,7 @@ function App() {
           </button>
           <button
             data-value={4}
-            className={`button  + ${colorBtn}`}
+            className={"button " + active4}
             onClick={() => {
               setTitle(languages[3].title);
               setDescription(languages[3].description);
@@ -91,7 +98,7 @@ function App() {
           </button>
           <button
             data-value={5}
-            className={`button  + ${colorBtn}`}
+            className={"button " + active5}
             onClick={() => {
               setTitle(languages[4].title);
               setDescription(languages[4].description);
@@ -105,7 +112,7 @@ function App() {
           </button>
           <button
             data-value={6}
-            className={`button  + ${colorBtn}`}
+            className={"button " + active6}
             onClick={() => {
               setTitle(languages[5].title);
               setDescription(languages[5].description);
