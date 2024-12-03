@@ -23,6 +23,7 @@ function App() {
     isActiveBtn == true ? setColorBtn("active") : setColorBtn("");
   };
 
+  // reattività colori button
   let active1 = title == "HTML" ? "active" : "";
   let active2 = title == "CSS" ? "active" : "";
   let active3 = title == "JavaScript" ? "active" : "";
